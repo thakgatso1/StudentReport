@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void login(View v){
+
         Intent intent=new Intent(MainActivity.this,Registerlecturer.class);
         startActivity(intent);
 

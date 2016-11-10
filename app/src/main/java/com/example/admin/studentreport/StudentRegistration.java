@@ -50,39 +50,13 @@ public class StudentRegistration extends AppCompatActivity {
         edtM2.setText("");
         edtM3.setText("");
 
-
     }
-
-//    public void getAll(View v){
-//        Cursor res = db.getAllLearner();
-//        if(res.getCount() == 0){
-//            showMessage("Error", "Data wasn't found.");
-//            return;
-//        }
-//        StringBuffer buffer = new StringBuffer();
-//        while (res.moveToNext()){
-//            buffer.append("ID :"+res.getString(0)+"\n");
-//            buffer.append("Name :"+res.getString(1)+"\n");
-//            buffer.append("Surname :"+res.getString(2)+"\n");
-//            buffer.append("subject Name :"+res.getString(3)+"\n \n");
-//            buffer.append("Mark1 :"+res.getString(4)+"\n \n");
-//            buffer.append("Mark1 :"+res.getString(5)+"\n \n");
-//            buffer.append("Mark1 :"+res.getString(6)+"\n \n");
-//        }
-//        showMessage("Data", buffer.toString());
-//    }
 
 public void getAll(View v){
     Intent intent=new Intent(StudentRegistration.this,StudentReport.class);
     startActivity(intent);
 }
 
-    public void showMessage(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+
 
 }

@@ -37,8 +37,6 @@ public class StudentReport extends AppCompatActivity implements AdapterView.OnIt
         lstStud.setOnItemClickListener(this);
 
     }
-
-
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Student objStudent;

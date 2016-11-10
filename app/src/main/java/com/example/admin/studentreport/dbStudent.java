@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class dbStudent extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "databaseStudents";
+    public static final String Lect_table = "tblLect";
     public static final String TABLE_NAME = "tblStudents";
     public static final String COLUMN1 = "studID";
     public static final String COLUMN2 = "studName";
@@ -24,6 +25,12 @@ public class dbStudent extends SQLiteOpenHelper {
     public static final String COLUMN5 = "mark1";
     public static final String COLUMN6 = "mark2";
     public static final String COLUMN7 = "mark3";
+    public static final String lectName="lecturerName";
+    public static final String lectUserName="lecturerUserName";
+    public static final String lectPassword="lecturerPassword";
+
+    public static final String lectAddress="lecturerAddress";
+    public static final String LectconfirmPassword="confirmPassword";
 
 
     public dbStudent(Context context) {
@@ -33,12 +40,14 @@ public class dbStudent extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " ( " + COLUMN1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN2 + " TEXT, " + COLUMN3 + " TEXT, " + COLUMN4 + " TEXT, " + COLUMN5 + " INTEGER, " + COLUMN6 + " INTEGER, " + COLUMN7 + " INTEGER )");
+        db.execSQL("create table " + Lect_table + " ( " + lectName + " TEXT, " + lectAddress + " TEXT, " + lectUserName + " TEXT, " + lectPassword + " TEXT, " + LectconfirmPassword + " TEXT)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + Lect_table);
         onCreate(db);
     }
 
@@ -62,6 +71,23 @@ public class dbStudent extends SQLiteOpenHelper {
         }
 
 
+
+    }
+    public boolean insertLecturer(Lecturer lecturer){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(lectName, lecturer.getLectName());
+        contentValues.put(lectAddress,lecturer.getLectAddress());
+        contentValues.put(lectUserName, lecturer.getLectUserName());
+        contentValues.put(lectPassword, lecturer.getLectPassword());
+        contentValues.put(LectconfirmPassword, lecturer.getLectConPass());
+        long result = db.insert(Lect_table, null, contentValues);
+        if(result == -1){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public Integer delete(Student std){
@@ -84,7 +110,7 @@ public class dbStudent extends SQLiteOpenHelper {
         contentValues.put(COLUMN6, stud.getMark2());
         contentValues.put(COLUMN7, stud.getMark3());
 
-        db.update(TABLE_NAME, contentValues, "studID = ?", new String[]{String.valueOf(stud.getStudId())});
+        db.update(TABLE_NAME, contentValues, COLUMN1+ " = ?", new String[]{String.valueOf(stud.getStudId())});
 
         return true;
     }

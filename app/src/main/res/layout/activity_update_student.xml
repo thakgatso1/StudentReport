@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Update Student "
+            android:text="EDIT Student details"
             android:textAllCaps="true"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -34,7 +34,7 @@
                     android:text="StudID:" />
 
                 <EditText
-                    android:id="@+id/edtID"
+                    android:id="@+id/edtID1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     android:text="Name:" />
 
                 <EditText
-                    android:id="@+id/edtname"
+                    android:id="@+id/edtname1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                     android:text="Surname:" />
 
                 <EditText
-                    android:id="@+id/edtSurname"
+                    android:id="@+id/edtSurname1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                     android:text="Subject:" />
 
                 <EditText
-                    android:id="@+id/edtSubName"
+                    android:id="@+id/edtSubName1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     android:text="Mark1:" />
 
                 <EditText
-                    android:id="@+id/edtM1"
+                    android:id="@+id/edtM11"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                     android:text="Mark2:" />
 
                 <EditText
-                    android:id="@+id/edtM2"
+                    android:id="@+id/edtM21"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                     android:text="Mark3:" />
 
                 <EditText
-                    android:id="@+id/edtM3"
+                    android:id="@+id/edtM31"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -146,10 +146,10 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
-                android:id="@+id/btnUpdate"
+                android:id="@+id/btnUpdate1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button"
+
                 android:layout_marginRight="5dp"
 
                 android:text="UPDATE" />

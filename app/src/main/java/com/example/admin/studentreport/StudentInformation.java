@@ -68,6 +68,7 @@ int result;
     public void update(View v) {
 
 Intent in = new Intent(getApplicationContext(),UpdateStudent.class);
+
         in.putExtra("student",objStudent);
         startActivity(in);
     }
